@@ -17,11 +17,9 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 // Our web handlers
 
 $app->get('/', function(Request $request) use($app) {
-    $url = $request->get('x_url');
-    $title = $request->get('x_title');
+    $url = $request->get('url');
+    $title = $request->get('title');
     $queries = $request->query->all();
-    unset($queries['x_url']);
-    unset($queries['x_title']);
     $url = $url . '&' . http_build_query($queries);
     if (!empty($url)) {
         $stream = function () use ($url, $title) {
