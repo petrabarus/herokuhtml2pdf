@@ -18,17 +18,20 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 
 $app->get('/', function(Request $request) use($app) {
     $url = $request->get('url');
-    $stream = function () use ($url) {
-        $filename = preg_replace("/[^a-zA-Z0-9]+/", "-", $url).".pdf";
-        $pdf = new Pdf([
-            //replace the binary to the right binary
-            'binary' => '../vendor/profburial/wkhtmltopdf-binaries-trusty/bin/wkhtmltopdf-linux-trusty-amd64'
-        ]);
-        $pdf->addPage($url);
-        $pdf->send($filename);
-    };
-    
-    return $app->stream($stream, 200);
+    if (!empty($url)) {
+        $stream = function () use ($url) {
+            $filename = preg_replace("/[^a-zA-Z0-9]+/", "-", $url).".pdf";
+            $pdf = new Pdf([
+                //replace the binary to the right binary
+                'binary' => '../vendor/profburial/wkhtmltopdf-binaries-trusty/bin/wkhtmltopdf-linux-trusty-amd64'
+            ]);
+            $pdf->addPage($url);
+            $pdf->send($filename);
+        };
+        return $app->stream($stream, 200);
+    } else {
+        return "<h1>Hello World!</h1>";
+    }
 });
 
 $app->run();
