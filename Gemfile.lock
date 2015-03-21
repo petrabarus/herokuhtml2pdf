@@ -1,10 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
-  wkhtmltopdf-heroku (2.12.2.1)
- 
+    wkhtmltopdf-heroku (2.12.2.1)
+
 PLATFORMS
   ruby
- 
+
 DEPENDENCIES
-  wkhtmltopdf-heroku 
+  wkhtmltopdf-heroku
