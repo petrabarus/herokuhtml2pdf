@@ -17,13 +17,29 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 // Our web handlers
 
 $app->get('/', function(Request $request) use($app) {
-    $url = $request->get('url');
+    $url = $request->get('x_url');
+    $title = $request->get('x_title');
+    $queries = $request->query->all();
+    unset($queries['x_url']);
+    unset($queries['x_title']);
+    $url = $url . '&' . http_build_query($queries);
     if (!empty($url)) {
-        $stream = function () use ($url) {
-            $filename = preg_replace("/[^a-zA-Z0-9]+/", "-", $url).".pdf";
+        $stream = function () use ($url, $title) {
+            if (empty($title)){
+                $title = $url;
+            }
+            $filename = preg_replace("/[^a-zA-Z0-9]+/", "-", $title).".pdf";
             $pdf = new Pdf([
                 //replace the binary to the right binary
-                'binary' => '../vendor/profburial/wkhtmltopdf-binaries-trusty/bin/wkhtmltopdf-linux-trusty-amd64'
+                'binary' => '../vendor/profburial/wkhtmltopdf-binaries-trusty/bin/wkhtmltopdf-linux-trusty-amd64',
+                
+                'no-outline',         // Make Chrome not complain
+                'no-stop-slow-scripts',
+                'margin-top'    => 0,
+                'margin-right'  => 0,
+                'margin-bottom' => 0,
+                'margin-left'   => 0,
+                'disable-smart-shrinking',
             ]);
             $pdf->addPage($url);
             $pdf->send($filename);
