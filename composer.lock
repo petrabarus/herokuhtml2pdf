@@ -4,8 +4,129 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5cb114b41b596d3efb0727773bcd909a",
+    "hash": "c0ad75d3f733ec1ee08d5c69363301c7",
     "packages": [
+        {
+            "name": "mikehaertl/php-shellcommand",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikehaertl/php-shellcommand.git",
+                "reference": "8f85b119472c98c539c7ac5f4302643ff20df220"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikehaertl/php-shellcommand/zipball/8f85b119472c98c539c7ac5f4302643ff20df220",
+                "reference": "8f85b119472c98c539c7ac5f4302643ff20df220",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mikehaertl\\shellcommand\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Härtl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "An object oriented interface to shell commands",
+            "keywords": [
+                "shell"
+            ],
+            "time": "2014-11-03 09:44:24"
+        },
+        {
+            "name": "mikehaertl/php-tmpfile",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikehaertl/php-tmpfile.git",
+                "reference": "e34d43fa546d09f434b59ea8c05d4e4d55d55687"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikehaertl/php-tmpfile/zipball/e34d43fa546d09f434b59ea8c05d4e4d55d55687",
+                "reference": "e34d43fa546d09f434b59ea8c05d4e4d55d55687",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mikehaertl\\tmp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Haertl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "A convenience class for temporary files",
+            "keywords": [
+                "files"
+            ],
+            "time": "2014-07-09 11:08:51"
+        },
+        {
+            "name": "mikehaertl/phpwkhtmltopdf",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikehaertl/phpwkhtmltopdf.git",
+                "reference": "362277037c88546bcde2ec433333375be22971f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikehaertl/phpwkhtmltopdf/zipball/362277037c88546bcde2ec433333375be22971f7",
+                "reference": "362277037c88546bcde2ec433333375be22971f7",
+                "shasum": ""
+            },
+            "require": {
+                "mikehaertl/php-shellcommand": "~1.0.4",
+                "mikehaertl/php-tmpfile": "~1.0.0",
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "mikehaertl\\wkhtmlto\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Haertl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "A slim PHP wrapper around wkhtmltopdf with an easy to use and clean OOP interface",
+            "homepage": "http://mikehaertl.github.com/phpwkhtmltopdf/",
+            "keywords": [
+                "pdf",
+                "wkhtmltoimage",
+                "wkhtmltopdf"
+            ],
+            "time": "2015-02-02 09:00:34"
+        },
         {
             "name": "monolog/monolog",
             "version": "1.13.1",
@@ -124,6 +245,46 @@
                 "dependency injection"
             ],
             "time": "2013-11-22 08:30:29"
+        },
+        {
+            "name": "profburial/wkhtmltopdf-binaries-trusty",
+            "version": "v0.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/profburial/wkhtmltopdf-binaries-trusty.git",
+                "reference": "9b97f0c9091ee17a0bd0732cbde5caa6da3ddd66"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/profburial/wkhtmltopdf-binaries-trusty/zipball/9b97f0c9091ee17a0bd0732cbde5caa6da3ddd66",
+                "reference": "9b97f0c9091ee17a0bd0732cbde5caa6da3ddd66",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/wkhtmltoimage-linux-trusty-amd64",
+                "bin/wkhtmltoimage-linux-trusty-i386",
+                "bin/wkhtmltopdf-linux-trusty-amd64",
+                "bin/wkhtmltopdf-linux-trusty-i386"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL Version 3"
+            ],
+            "authors": [
+                {
+                    "name": "Terry Harmon",
+                    "email": "terry@polymorphdev.com"
+                }
+            ],
+            "description": "All the wkhtmltopdf binaries for Ubuntu 14.04 (trusty).",
+            "homepage": "https://github.com/profburial/wkhtmltopdf-binaries-trusty",
+            "keywords": [
+                "binary",
+                "pdf",
+                "wkhtmltopdf"
+            ],
+            "time": "2014-10-19 18:25:40"
         },
         {
             "name": "psr/log",
@@ -615,7 +776,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mikehaertl/phpwkhtmltopdf": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

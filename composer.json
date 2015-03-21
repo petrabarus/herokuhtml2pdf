@@ -1,7 +1,9 @@
 {
   "require" : {
     "silex/silex": "~1.1",
-    "monolog/monolog": "~1.7"
+    "monolog/monolog": "~1.7",
+    "profburial/wkhtmltopdf-binaries-trusty": "0.12.1",
+    "mikehaertl/phpwkhtmltopdf": "2.0.*@dev"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
