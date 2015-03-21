@@ -20,6 +20,9 @@ $app->get('/', function(Request $request) use($app) {
     $url = $request->get('url');
     $title = $request->get('title');
     $queries = $request->query->all();
+    //assume there is no get using url and title
+    unset($queries['url']);
+    unset($queries['title']);
     $url = $url . '&' . http_build_query($queries);
     if (!empty($url)) {
         $stream = function () use ($url, $title) {
